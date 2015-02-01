@@ -1,0 +1,3 @@
+<h1><%= @category.name %></h1>
+
+<%= line_chart @category.line_items.group(:year).sum(:total) %>

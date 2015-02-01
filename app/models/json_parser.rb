@@ -1,5 +1,3 @@
-#require_relative '../../db/gross_output.json'
-
 class JsonParser
   attr_accessor :data, :government, :private_industries, :private_industries_array, :private_industries_list, :top_level_categories_and_totals
 
@@ -13,6 +11,8 @@ class JsonParser
 
     get_all_private_industries
     get_top_level_categories_and_totals
+
+    create_top_level_categories_and_line_items
   end
 
   def government_totals
@@ -32,6 +32,17 @@ class JsonParser
       end
     end
     @top_level_categories_and_totals << {"Government" => government["totals"]}
+  end
+
+  def create_top_level_categories_and_line_items
+    @top_level_categories_and_totals.each do |category_hash|
+      category_hash.each do |name, totals_hash|
+        category = Category.find_or_create_by(name: name)
+        totals_hash.each do |year, total|
+          LineItem.create(category_id: category.id, year: year.to_i, total: total)
+        end
+      end
+    end
   end
 
 end

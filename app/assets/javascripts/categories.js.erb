@@ -1,0 +1,23 @@
+$(document).ready(function(){
+  setTimeout(function(){
+    //debugger;
+    var year = 2005
+    $('circle').each(function(){
+      //$(this).attr('id', year);
+      $(this).before( "<p class=node-wrapper id="+year+"></p>" );
+      year++;
+    });
+
+    $('g').on('dblclick', 'circle', function(e){
+      e.stopPropagation();
+      var selectedYear = $(this).parent().prev().attr('id');
+      alert(selectedYear);
+      var currentUrl = window.location.href;
+      window.location = currentUrl + "/line_items/" + selectedYear
+    });
+  }, 10000);
+});
+
+
+
+

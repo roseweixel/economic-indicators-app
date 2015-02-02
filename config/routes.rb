@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   end
 
   get 'categories/:id/line_items/:year' => 'line_items#show', :as => 'line_item'
+
+  root 'categories#index'
 end

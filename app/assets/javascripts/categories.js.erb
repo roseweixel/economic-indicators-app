@@ -19,15 +19,10 @@ $(document).ready(function(){
       if (selectedYear == undefined) {
         selectedYear = "2013";
       }
-      // alert(selectedYear);
       var currentUrl = window.location.href;
       if (selectedYear !== undefined) {
         window.location = currentUrl + "/line_items/" + selectedYear;
       } 
-      else {
-        debugger
-        // alert("Year was undefined.");
-      }
     });
   }, 1000);
 });

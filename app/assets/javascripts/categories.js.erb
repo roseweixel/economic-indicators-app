@@ -16,6 +16,9 @@ $(document).ready(function(){
       if (selectedYear == undefined) {
         selectedYear = $(this).parent().next('p').attr('id') - 1;
       }
+      if (selectedYear == undefined) {
+        selectedYear = "2013";
+      }
       // alert(selectedYear);
       var currentUrl = window.location.href;
       if (selectedYear !== undefined) {

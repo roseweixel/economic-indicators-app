@@ -1,19 +1,39 @@
 $(document).ready(function(){
-  setTimeout(function(){
-    //debugger;
+  $(window).on('click', 'dblclick', 'hover', 'circle', 'g', function(){
     var year = 2005
-    $('circle').each(function(){
+    $('circle[r="4"]').each(function(){
+      //$(this).attr('id', year);
+      $(this).before( "<p class=node-wrapper id="+year+"></p>" );
+      year++;
+    });
+  });
+
+  setTimeout(function(){
+    var year = 2005
+    $('circle[r="4"]').each(function(){
       //$(this).attr('id', year);
       $(this).before( "<p class=node-wrapper id="+year+"></p>" );
       year++;
     });
 
+
     $('g').on('dblclick', 'circle', function(e){
+      e.preventDefault();
       e.stopPropagation();
       var selectedYear = $(this).parent().prev().attr('id');
       alert(selectedYear);
       var currentUrl = window.location.href;
-      window.location = currentUrl + "/line_items/" + selectedYear
+      if (selectedYear !== undefined) {
+        window.location = currentUrl + "/line_items/" + selectedYear;
+      } else {
+        alert("year was undefined");
+        var year = 2005
+        $('circle[r="4"]').each(function(){
+          //debugger;
+          $(this).before( "<p class=node-wrapper id="+year+"></p>" );
+          year++;
+        });
+      }
     });
   }, 10000);
 });

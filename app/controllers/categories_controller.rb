@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    id = rand(1..Category.count)
+    redirect_to category_path(id)
   end
 
   def show
+    @categories = Category.all
     @category = Category.find(params[:id])
   end
 

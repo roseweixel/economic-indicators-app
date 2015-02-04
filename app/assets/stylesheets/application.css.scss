@@ -18,10 +18,9 @@
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
  */
 @import "bootstrap";
-/* Some Style from the Bootstrap Default Theme */
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+  font-family: "Gill Sans";
+  background-color: #e7f0f5;
 }
 
 .theme-dropdown .dropdown-menu {

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $('#line-items').hide()
+
   setTimeout(function(){
     var year = 2005;
     $('circle[r="4"]').each(function(){
@@ -23,6 +25,7 @@ $(document).ready(function(){
       var categoryID = currentUrl.substr(currentUrl.lastIndexOf('/') + 1);
 
       if (selectedYear !== undefined) {
+        $('#line-items').show()
         $.ajax({
           type: "GET",
           url: "/categories/"+categoryID+"/line_items/"+selectedYear

@@ -1,24 +1,7 @@
-<div class="row">
-  <div class="col-md-3">
-
-    <h1>Categories</h1>
-
-    <ul>
-    <% @categories.each do |category| %>
-      <li><%= link_to category.name, category_path(category) %></li>
-    <% end %>
-    </ul>
-
-  </div>
-
-  <div class="col-md-9">
-
-    <h1 style="padding-left: 80px;"><%= @category.name %></h1>
-
-    <%= line_chart chart_path %>
-
-    <div id="line-items">
-    </div>
-
-  </div>
+<%= render 'nav' %>
+<div class="chart">
+  <h1><%= @category.name %> (Gross Output in Billions)</h1>
+  <%= line_chart chart_path %>
+</div>
+<div id="line-items">
 </div>

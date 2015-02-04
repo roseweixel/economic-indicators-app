@@ -3,7 +3,7 @@ class LineItem < ActiveRecord::Base
   validates_uniqueness_of :category_id, scope: :year
 
   def search_query
-    self.category.query || self.category.name
+    self.category.query || self.category.name.gsub(" ", "+")
   end
 
   def articles_url

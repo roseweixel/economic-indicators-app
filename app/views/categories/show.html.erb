@@ -1,8 +1,24 @@
-<h1><%= @category.name %></h1>
+<div class="row">
+  <div class="col-md-3">
 
-<%= line_chart chart_path %>
+    <h1>Categories</h1>
 
-<div id="line-items">
+    <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, category_path(category) %></li>
+    <% end %>
+    </ul>
+
+  </div>
+
+  <div class="col-md-9">
+
+    <h1 style="padding-left: 80px;"><%= @category.name %></h1>
+
+    <%= line_chart chart_path %>
+
+    <div id="line-items">
+    </div>
+
+  </div>
 </div>
-
-<%= link_to "Home", root_path %>

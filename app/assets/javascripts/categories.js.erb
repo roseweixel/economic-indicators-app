@@ -23,12 +23,10 @@ $(document).ready(function(){
       var categoryID = currentUrl.substr(currentUrl.lastIndexOf('/') + 1);
 
       if (selectedYear !== undefined) {
-        //window.location = currentUrl + "/line_items/" + selectedYear;
         $.ajax({
           type: "GET",
           url: "/categories/"+categoryID+"/line_items/"+selectedYear
         });
-        //$('#snippet').hide();
       } 
     });
   }, 1000);

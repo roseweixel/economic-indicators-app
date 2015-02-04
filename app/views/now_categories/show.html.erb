@@ -1,0 +1,32 @@
+<%= link_to 'THEN', category_path(@category) %>
+
+<div class="row">
+  <div class="col-md-3">
+
+    <h1>Categories</h1>
+
+    <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, category_path(category) %></li>
+    <% end %>
+    </ul>
+
+  </div>
+
+  <div class="col-md-9" style="padding-left: 80px;">
+
+    <h1><%= @category.name %> Now</h1>
+
+    <% @articles.each_with_index do |article, index| %>
+
+      <h3 class="headline" id=<%=index%>><%= DateTime.iso8601(article["pub_date"]).strftime("%m.%d.%Y") %> <%= link_to article["headline"]["main"], article["web_url"], :target => "_blank" %></h3>
+      <p class="snippet" id=<%=index%>><%= article["snippet"] %></p>
+    <% end %>
+
+    <%#= line_chart chart_path %>
+
+<!--     <div id="line-items">
+    </div> -->
+
+  </div>
+</div>

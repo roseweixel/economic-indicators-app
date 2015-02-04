@@ -1,0 +1,2 @@
+module NowCategoriesHelper
+end

@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>UsSpendingApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+	<head>
+	  <title>UsSpendingApp</title>
+	  <%= stylesheet_link_tag    'application', media: 'all' %>
 
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-  
-  <%= csrf_meta_tags %>
-  <%= analytics_init if Rails.env.production? %>
-</head>
-<body>
-  <div class="container">
-
-    <%= yield %>
-    
-  </div>
-</body>
+	  <%= javascript_include_tag 'application' %>
+	  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+	  
+	  <%= csrf_meta_tags %>
+	  <%= analytics_init if Rails.env.production? %>
+	</head>
+	<body>
+	  <div class="container-fluid">
+	    <%= yield %>
+	  </div>
+	</body>
 </html>

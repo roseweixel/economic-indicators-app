@@ -1,0 +1,1 @@
+$("#line-items").replaceWith("<%= escape_javascript(render(:partial => 'show', :locals => {category: @category, articles: @articles, line_item: @line_item})) %>");

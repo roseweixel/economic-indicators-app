@@ -1,6 +1,6 @@
 <div id="line-items">
   <h1><%= line_item.category.name %> News</h1>
-  <h3 id="menu"><%= line_item.year %> | <%= link_to 'NOW', now_category_path(line_item.category) %></h3>
+  <h3 id="menu"><%= line_item.year %> | <%= link_to "NOW", now_category_path(line_item.category, :year => line_item.year), remote: true %></h3>
   <% @articles.each_with_index do |article, index| %>
   	<h3 class="headline" id=<%=index%>><%= DateTime.iso8601(article["pub_date"]).strftime("%m.%d.%Y") %> <%= link_to article["headline"]["main"], article["web_url"], :target => "_blank" %></h3>
   	<p class="snippet" id=<%=index%>><%= article["snippet"] %></p>

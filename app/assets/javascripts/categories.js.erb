@@ -32,7 +32,18 @@ $(document).ready(function(){
         });
       } 
     });
-  }, 1000);
+  }, 5000);
+
+  $('body').on('click', '.then', function(){
+    var selectedYear = this.id;
+    var currentUrl = window.location.href;
+    var categoryID = currentUrl.substr(currentUrl.lastIndexOf('/') + 1);
+
+    $.ajax({
+      type: "GET",
+      url: "/categories/"+categoryID+"/line_items/"+selectedYear
+    });
+  })
 });
 
 

@@ -4,4 +4,9 @@
 
   <h1>Total: <%= line_item.total %></h1>
 
+  <% @articles.each do |article| %>
+  	<h3><%= article["headline"]["main"] %></h3>
+  	<p><%= article["snippet"] %></p>
+  <% end %>
+
 </div>

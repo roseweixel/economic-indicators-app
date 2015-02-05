@@ -4,6 +4,8 @@ div.container-fluid{
 
 h1 {
 	text-transform: uppercase;
+	font-family: "Gill Sans";
+	font-weight: 500;
 }
  
 #menu {
@@ -11,65 +13,29 @@ h1 {
 	top: -10px;
 }
 
-#heading{
-	width: 67%;
-	float: right;
-	padding: 3%;
-	margin: 0% 6% 0% 4%;
-	text-align: center;
-	color: #d2262d;
+.list-group{
+	width: 20%;
+	float: left;
+}
+
+.list-group a {
+	/*margin: 2%;*/
+}
+
+#top-nav{
+	margin-bottom: 0;
+	background-color: #08446F;
 }
 
 .chart, #line-items{
-	/*color: white;*/
-	width: 67%;
 	padding: 3%;
-	margin: 2% 5% 2% 4%;
+	margin: 2% 7%;
 	background-color: white;
-	float: right;
-	/*text-align: center;*/
+	border: 1px solid #DDDDDD;
 }
 
 #line-items{
 	margin-top: 0;
-}
-
-#line-items a{
-	/*color: white;*/
-}
-
-.my-nav li{
-	display: block;
-	margin: 2.5% 1%;
-	padding: 3%;
-	background-color: #e7f0f5;
-	line-height: 1.2em;
-	text-align: center;
-}
-
-.my-nav li:hover, .my-nav li:hover a{
-	background-color: #4388ad;
-	color: white;
-}
-
-.my-nav li.current, .my-nav li.current a{
-	background-color: #4388ad;
-	color: white;
-}
-
-.my-nav ul{
-	list-style-type: none;
-	-webkit-padding-start: 0px;
-}
-
-.my-nav{
-	background-color: #044371;
-	margin-top: 0;
-	width: 22%;
-	padding: 2%;
-	padding-top: 1%;
-	height: 100%;
-	position: fixed;
 }
 
 .then:hover {
@@ -78,4 +44,12 @@ h1 {
 
 .snippet{
 	font-size: 1.5em;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
+	background-color: #2780E3;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
+	background-color: #2780E3;
 }

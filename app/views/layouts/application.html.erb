@@ -11,6 +11,7 @@
 	  <%= analytics_init if Rails.env.production? %>
 	</head>
 	<body>
+		<%= render 'navbar' %>
 	  <div class="container-fluid">
 	    <%= yield %>
 	  </div>

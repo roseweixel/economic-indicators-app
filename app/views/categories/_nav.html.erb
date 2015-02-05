@@ -1,7 +1,13 @@
-<div class="my-nav">
+<!-- <div class="my-nav">
   <ul>
   <% @categories.each do |category| %>
     <li id="<%=category.id%>"><%= link_to category.name, category_path(category) %></li>
   <% end %>
   </ul>
 </div>
+
+<div class="list-group">
+  <% @categories.each do |category| %>
+    <%= link_to category.name, category_path(category), class: "list-group-item", id: category.id %>
+  <% end %>
+</div> -->

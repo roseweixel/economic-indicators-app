@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    id = rand(1..Category.count)
+    id = (Category.pluck(:id)).sample
     redirect_to category_path(id)
   end
 

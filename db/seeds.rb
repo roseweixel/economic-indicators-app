@@ -17,3 +17,8 @@ big_categories = [
 big_categories.each do |big_category|
   assign_query_string(big_category)
 end
+
+cat_to_remove = Category.find_by(name: "Other services, except government");
+cat_to_remove.destroy
+
+

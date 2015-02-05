@@ -66,3 +66,11 @@ h1 {
 	height: 100%;
 	position: fixed;
 }
+
+.then:hover {
+  cursor: pointer;
+}
+
+.snippet{
+	font-size: 1.5em;
+}

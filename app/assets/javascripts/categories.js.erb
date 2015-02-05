@@ -1,5 +1,8 @@
 $(document).ready(function(){
   $('#line-items').hide()
+  var currentUrl = window.location.href;
+  var categoryID = currentUrl.substr(currentUrl.lastIndexOf('/') + 1);
+  $("#"+categoryID).addClass('current')
 
   setTimeout(function(){
     var year = 2005;
@@ -30,6 +33,7 @@ $(document).ready(function(){
           type: "GET",
           url: "/categories/"+categoryID+"/line_items/"+selectedYear
         });
+        $("#"+categoryID).addClass('current')
       } 
     });
   }, 5000);
@@ -43,9 +47,5 @@ $(document).ready(function(){
       type: "GET",
       url: "/categories/"+categoryID+"/line_items/"+selectedYear
     });
-  })
+  });
 });
-
-
-
-

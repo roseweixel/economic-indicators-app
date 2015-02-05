@@ -52,6 +52,11 @@ h1 {
 	color: white;
 }
 
+.my-nav li.current, .my-nav li.current a{
+	background-color: #4388ad;
+	color: white;
+}
+
 .my-nav ul{
 	list-style-type: none;
 	-webkit-padding-start: 0px;

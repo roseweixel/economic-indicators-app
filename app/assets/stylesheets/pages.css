@@ -1,0 +1,14 @@
+.about-pic img {
+  border-radius: 50%
+}
+
+.about-pic {
+  width: 20%;
+  display: inline-block;
+  font-style: italic;
+}
+
+.about-pic a {
+  font-style: normal;
+}
+
